@@ -95,10 +95,6 @@ export class AppService {
         });
   }
   ...
-```
-
-Here, you've injected the connection as a local property of the service class, and can access any of the MassiveJS API through that property (e.g., `return await this.db.cats.find(criteria)`, where `db` represents your MassiveJS connection object).
-
 
 ### To Do
 
