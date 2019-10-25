@@ -31,8 +31,6 @@ This module is a thin layer on top of the [Avis Vérifiés API](https://www.avis
 
 To configure your API connection, import the `AvVerif` module using `forRootAsync()` pattern.Basically, you configure the module with a `AvisVerifServiceOrderParams` object. To see the documentation of Avis Vérifiés create an account on https://www.avis-verifies.com/index.php?page=mod_inscription.
 
-Once configured, inject the `SINGLETON` connection object into any service using the `AV_VERIF_CONNECT_OPTIONS` injection token.
-
 For example, your `AppModule` might look like this :
 
 ```typescript
@@ -95,6 +93,7 @@ export class AppService {
         });
   }
   ...
+```
 
 ### To Do
 

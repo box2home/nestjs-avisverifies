@@ -12,11 +12,11 @@
         "sourceMap": true,
         "allowJs": true,
         "outDir": "./dist",
-        "baseUrl": "./AvisVerif",
+        "baseUrl": "src",
         "incremental": true
     },
     "include": [
-        "AvisVerif/**/*", "index.ts"
+        "src/**/*", "index.ts"
     ],
     "exclude": [
         "node_modules", "dist",
