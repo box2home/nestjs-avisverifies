@@ -1,4 +1,4 @@
-import { IAvisVerifServiceProductParams } from './AvisVerifServiceProductParams.interface';
+import { IAvisVerifServiceProductParams } from './avis-verif-service-product-params.interface';
 
 export interface IAvisVerifServiceOrderParams {
     query: string;
@@ -11,5 +11,5 @@ export interface IAvisVerifServiceOrderParams {
     id_shop?: number;
     name_shop?: string;
     delay?: number;
-    PRODUCTS: IAvisVerifServiceProductParams;
+    PRODUCTS: IAvisVerifServiceProductParams [];
 }

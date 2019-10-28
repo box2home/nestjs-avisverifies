@@ -86,13 +86,13 @@ export class AppService {
         id_shop: data.id_shop,
         name_shop: data.name_shop,
         delay: data.delay,
-        PRODUCTS : {id_product : data.id_product, name_product : data.name_product}
+        PRODUCTS : [{id_product : data.id_product, name_product : data.name_product}] // table product could contain from 0 to n products.
         });
      response.subscribe((data) => {
             console.log(data);
         });
   }
-  ...
+  
 ```
 
 ### To Do

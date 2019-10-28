@@ -1,7 +1,8 @@
 import { DynamicModule, Module, Provider, HttpModule } from '@nestjs/common';
 import { AvisVerifService } from './services/avis-verif.service';
 import { AV_VERIF_CONNECT_OPTIONS } from './constants';
-import { IAVisVerifConnectAsyncOptions } from './interfaces/AVisVerifConnectAsyncOptions.interface';
+import { IAVisVerifConnectAsyncOptions } from './interfaces/avis-verif-connect-async-options.interface';
+import { AvVerifLogger } from './services/avis-verif-logger.service';
 
 @Module({})
 export class AvisVerifModule {
@@ -14,6 +15,7 @@ export class AvisVerifModule {
             providers: [
                 this._createConnectProviders(connectOptions),
                 AvisVerifService,
+                AvVerifLogger,
             ],
             exports: [AvisVerifService],
         };
