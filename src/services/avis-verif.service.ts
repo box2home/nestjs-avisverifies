@@ -1,40 +1,42 @@
-import { Injectable, Inject, HttpService } from '@nestjs/common';
+import { HttpService, Inject, Injectable } from '@nestjs/common';
 import { AV_VERIF_CONNECT_OPTIONS } from '../constants';
-import { IAvisVerifConfigOptions } from '../interfaces/avis-verif-config-options.interface';
+import { IAvisVerifConfigOptions, IAvisVerifServiceOrderParams } from '..';
 import * as SHA1 from 'sha1';
-import { IAvisVerifServiceOrderParams } from '../interfaces/avis-verif-service-order-params.interface';
 import * as querystring from 'querystring';
 import { AvVerifLogger } from './avis-verif-logger.service';
+
 @Injectable()
 export class AvisVerifService {
     private _idWebsite: string;
     private _secureKey: string;
     private _urlAv: string;
     private _sign: any;
+
     constructor(
         @Inject(AV_VERIF_CONNECT_OPTIONS)
         private _options: IAvisVerifConfigOptions,
         private readonly _http: HttpService,
         private readonly _logger: AvVerifLogger,
     ) {
-        this._logger.log('initialising Avis Verif Module', 'AvisVerifModule');
+        this._logger.log('initialising Avis Verifies Module', 'AvisVerifModule');
         this._idWebsite = this._options.ID_WEBSITE;
         this._secureKey = this._options.SECURE_KEY;
         this._urlAv = this._options.URL_AV;
     }
+
     /**
      * @param  {IAvisVerifServiceOrderParams} configParams
      */
     send(configParams: IAvisVerifServiceOrderParams) {
         this._sign = SHA1(
             configParams.query +
-                configParams.order_ref +
-                configParams.email +
-                configParams.lastname +
-                configParams.firstname +
-                configParams.order_date +
-                ((configParams.delay !== undefined) ? configParams.delay : '') +
-                this._secureKey,
+            configParams.order_ref +
+            configParams.email +
+            configParams.lastname +
+            configParams.firstname +
+            configParams.order_date +
+            (configParams.delay ? configParams.delay : '') +
+            this._secureKey,
         );
 
         const obj = {

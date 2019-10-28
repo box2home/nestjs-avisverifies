@@ -1,4 +1,4 @@
-import { DynamicModule, Module, Provider, HttpModule } from '@nestjs/common';
+import { DynamicModule, HttpModule, Module, Provider } from '@nestjs/common';
 import { AvisVerifService } from './services/avis-verif.service';
 import { AV_VERIF_CONNECT_OPTIONS } from './constants';
 import { IAVisVerifConnectAsyncOptions } from './interfaces/avis-verif-connect-async-options.interface';

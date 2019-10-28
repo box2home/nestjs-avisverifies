@@ -11,5 +11,5 @@ export interface IAvisVerifServiceOrderParams {
     id_shop?: number;
     name_shop?: string;
     delay?: number;
-    PRODUCTS: IAvisVerifServiceProductParams [];
+    PRODUCTS: IAvisVerifServiceProductParams[];
 }
