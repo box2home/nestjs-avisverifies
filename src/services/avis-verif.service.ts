@@ -35,7 +35,7 @@ export class AvisVerifService {
             configParams.lastname +
             configParams.firstname +
             configParams.order_date +
-            (configParams.delay ? configParams.delay : '') +
+            (configParams.delay !== undefined ? configParams.delay : '') +
             this._secureKey,
         );
 
