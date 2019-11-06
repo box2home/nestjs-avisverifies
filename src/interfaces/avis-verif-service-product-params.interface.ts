@@ -1,5 +1,5 @@
 export interface IAvisVerifServiceProductParams {
-    id_product: number;
+    id_product: string;
     name_product: string;
     url_product?: string;
     url_image_product?: string;
