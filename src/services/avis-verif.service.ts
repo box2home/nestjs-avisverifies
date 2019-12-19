@@ -23,9 +23,9 @@ export class AvisVerifService {
         private readonly _logger: AvVerifLogger,
     ) {
         this._logger.log('initialising Avis Verifies Module', 'AvisVerifModule');
-        this._idWebsite = this._options.ID_WEBSITE;
-        this._secureKey = this._options.SECURE_KEY;
-        this._urlAv = this._options.URL_AV;
+        this._idWebsite = this._options.idWebsite;
+        this._secureKey = this._options.secureKey;
+        this._urlAv = this._options.urlAv;
     }
 
     /**
