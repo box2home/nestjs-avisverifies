@@ -1,12 +1,11 @@
-import { HttpService, Inject, Injectable } from '@nestjs/common';
 import * as querystring from 'querystring';
+
+import { HttpService, Inject, Injectable } from '@nestjs/common';
 import { map } from 'rxjs/operators';
 import * as SHA1 from 'sha1';
 
-import { AV_VERIF_CONNECT_OPTIONS } from '../constants';
-
 import { IAvisVerifConfigOptions, IAvisVerifServiceOrderParams } from '..';
-
+import { AV_VERIF_CONNECT_OPTIONS } from '../constants';
 import { AvVerifLogger } from './avis-verif-logger.service';
 
 @Injectable()
